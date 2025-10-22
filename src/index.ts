@@ -7,3 +7,5 @@ export {
   NestedParams,
   ExecuteFunction,
 } from "./lib/types";
+
+export { initializePrismaClient } from "./lib/utils/prismaClient";
