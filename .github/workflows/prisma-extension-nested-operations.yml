@@ -7,7 +7,7 @@ on:
   pull_request:
 
 permissions:
-  contents: write # Required to checkout the repository
+  contents: write # Required to push to the repository
   issues: write # Required to create issues
   pull-requests: write # Required to create pull requests
 
