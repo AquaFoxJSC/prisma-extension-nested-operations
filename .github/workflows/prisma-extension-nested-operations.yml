@@ -6,6 +6,10 @@ on:
       - 'next'
   pull_request:
 
+permissions:
+  contents: write
+  issues: write
+
 jobs:
   test:
     name: 'node ${{ matrix.node }} chrome ${{ matrix.os }} '
