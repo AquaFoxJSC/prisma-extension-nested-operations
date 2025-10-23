@@ -1,6 +1,9 @@
 # Dependency directories
 node_modules/
 
+# Build output directory
+# dist/
+
 # Test coverage directory
 coverage
 
