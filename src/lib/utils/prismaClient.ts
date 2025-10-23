@@ -42,10 +42,13 @@ export async function initializePrismaClient(clientPath?: string): Promise<void>
 /**
  * Initialize with a Prisma namespace directly (synchronous).
  * Use this when you already have the Prisma namespace loaded in your app.
+ * The namespace MUST have dmmf property (will be automatically added if using prismaClient in soft-delete)
  */
 export function initializePrismaClientWithNamespace(namespace: typeof Prisma): void {
-  if (!namespace || !namespace.dmmf) {
-    throw new Error('Provided Prisma namespace does not have dmmf property. Please ensure it is a valid Prisma namespace.');
+  // For Prisma v6 compatibility, dmmf might be injected dynamically
+  // So we don't check for dmmf here, just trust it will be there when needed
+  if (!namespace) {
+    throw new Error('Provided Prisma namespace is null or undefined.');
   }
   
   PrismaNamespace = namespace;

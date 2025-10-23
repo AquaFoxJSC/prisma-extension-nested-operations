@@ -7,6 +7,7 @@ export declare function initializePrismaClient(clientPath?: string): Promise<voi
 /**
  * Initialize with a Prisma namespace directly (synchronous).
  * Use this when you already have the Prisma namespace loaded in your app.
+ * The namespace MUST have dmmf property (will be automatically added if using prismaClient in soft-delete)
  */
 export declare function initializePrismaClientWithNamespace(namespace: typeof Prisma): void;
 /**
