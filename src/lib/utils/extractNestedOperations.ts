@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client";
+import type { Prisma } from "@prisma/client";
 import { Types } from "@prisma/client/runtime/library";
 import get from "lodash/get";
 
@@ -51,7 +51,7 @@ export function extractRelationLogicalWhereOperations<
   parentTarget?: Target,
   parentOperations: { logicalOperator: LogicalOperator; index?: number }[] = []
 ): NestedOperationInfo[] {
-  const relations = relationsByModel[params.model || ""] || [];
+  const relations = relationsByModel()[String(params.model || "")] || [];
   const nestedWhereOperations: NestedOperationInfo[] = [];
 
   const operationsPath: string[] = [];
@@ -225,7 +225,7 @@ export function extractRelationLogicalWhereOperations<
 export function extractRelationWhereOperations<
   ExtArgs extends Types.Extensions.InternalArgs = Types.Extensions.DefaultArgs
 >(params: NestedParams<ExtArgs>, parentTarget?: Target): NestedOperationInfo[] {
-  const relations = relationsByModel[params.model || ""] || [];
+  const relations = relationsByModel()[String(params.model || "")] || [];
 
   const nestedWhereOperations = extractRelationLogicalWhereOperations(
     params,
@@ -299,7 +299,7 @@ export function extractRelationWhereOperations<
 export function extractRelationWriteOperations<
   ExtArgs extends Types.Extensions.InternalArgs = Types.Extensions.DefaultArgs
 >(params: NestedParams<ExtArgs>, parentTarget?: Target): NestedOperationInfo[] {
-  const relations = relationsByModel[params.model || ""] || [];
+  const relations = relationsByModel()[String(params.model || "")] || [];
 
   if (!isWriteOperation(params.operation)) return [];
 
@@ -389,7 +389,7 @@ export function extractRelationWriteOperations<
 export function extractRelationReadOperations<
   ExtArgs extends Types.Extensions.InternalArgs = Types.Extensions.DefaultArgs
 >(params: NestedParams<ExtArgs>, parentTarget?: Target): NestedOperationInfo[] {
-  const relations = relationsByModel[params.model || ""] || [];
+  const relations = relationsByModel()[String(params.model || "")] || [];
   const nestedOperations: NestedOperationInfo[] = [];
 
   relations.forEach((relation) => {

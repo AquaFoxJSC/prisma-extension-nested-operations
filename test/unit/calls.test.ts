@@ -65,8 +65,8 @@ function getModelRelation<Model extends Prisma.ModelName>(
   model: Model,
   relationName: string
 ): Prisma.DMMF.Field {
-  const modelRelation = relationsByModel[model].find(
-    (relation) => relation.name === relationName
+  const modelRelation = relationsByModel()[model].find(
+    (relation: Prisma.DMMF.Field) => relation.name === relationName
   );
   if (!modelRelation) {
     throw new Error(
