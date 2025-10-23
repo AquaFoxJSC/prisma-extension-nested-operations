@@ -10,6 +10,7 @@ permissions:
   contents: write # Required to push to the repository
   issues: write # Required to create issues
   pull-requests: write # Required to create pull requests
+  id-token: write # Required to create id tokens
 
 jobs:
   test:
@@ -43,4 +44,4 @@ jobs:
       - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
