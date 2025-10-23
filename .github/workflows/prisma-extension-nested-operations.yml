@@ -7,9 +7,9 @@ on:
   pull_request:
 
 permissions:
-  contents: write
-  issues: write
-
+  contents: read # Required to checkout the repository
+  packages: write # Required to publish packages
+  
 jobs:
   test:
     name: 'node ${{ matrix.node }} chrome ${{ matrix.os }} '
