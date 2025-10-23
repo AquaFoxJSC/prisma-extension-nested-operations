@@ -7,7 +7,7 @@ on:
   pull_request:
 
 permissions:
-  contents: read # Required to checkout the repository
+  contents: write # Required to checkout the repository
   packages: write # Required to publish packages
   issues: write # Required to create issues
 
