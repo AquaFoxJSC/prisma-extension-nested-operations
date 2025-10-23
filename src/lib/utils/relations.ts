@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client";
+import type { Prisma } from "@prisma/client";
 import { getPrismaClientSync } from "./prismaClient";
 
 let relationsByModel: Record<string, Prisma.DMMF.Field[]> | null = null;

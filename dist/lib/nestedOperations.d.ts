@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client";
+import type { Prisma } from "@prisma/client";
 import { Types } from "@prisma/client/runtime/library";
 import { NestedParams } from "./types";
 type NonNullable<T> = Exclude<T, null | undefined>;

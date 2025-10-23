@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client";
+import type { Prisma } from "@prisma/client";
 /**
  * Initialize the Prisma client from a custom path or use the default one.
  * This must be called before using withNestedOperations if you want to use a custom client path.

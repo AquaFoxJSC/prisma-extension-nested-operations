@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client";
+import type { Prisma } from "@prisma/client";
 import { Types } from "@prisma/client/runtime/library";
 
 import { OperationCall, NestedParams } from "./types";

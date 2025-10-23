@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client";
+import type { Prisma } from "@prisma/client";
 import { Types } from "@prisma/client/runtime/library";
 import { DeferredPromise } from "@open-draft/deferred-promise";
 export type Modifier = "is" | "isNot" | "some" | "none" | "every";

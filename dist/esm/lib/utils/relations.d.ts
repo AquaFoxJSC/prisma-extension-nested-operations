@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client";
+import type { Prisma } from "@prisma/client";
 /**
  * Lazy load and cache relationsByModel from Prisma DMMF.
  * This allows us to use a custom Prisma client if initialized.
