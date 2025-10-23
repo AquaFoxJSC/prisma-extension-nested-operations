@@ -11,6 +11,7 @@ permissions:
   issues: write # Required to create issues
   pull-requests: write # Required to create pull requests
   id-token: write # Required to create id tokens
+  packages: write # Required to publish packages
 
 jobs:
   test:
