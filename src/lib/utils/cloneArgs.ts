@@ -1,4 +1,3 @@
-import type { Prisma } from "@prisma/client";
 import { cloneDeep, cloneDeepWith } from "lodash";
 import { getPrismaClientSync } from "./prismaClient";
 

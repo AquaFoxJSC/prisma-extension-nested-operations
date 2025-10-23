@@ -78,7 +78,7 @@ export function getPrismaClientSync(): typeof Prisma {
   if (!PrismaNamespace) {
     // Fallback to default import for backward compatibility
     // Using dynamic require to avoid TypeScript errors
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    // eslint-disable-next-line @typescript-eslint/no-var-requires, no-eval
     const imported = eval('require')("@prisma/client") as { Prisma: any };
     PrismaNamespace = imported.Prisma;
     isInitialized = true;
