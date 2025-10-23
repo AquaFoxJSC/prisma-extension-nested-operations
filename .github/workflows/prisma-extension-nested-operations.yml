@@ -8,8 +8,8 @@ on:
 
 permissions:
   contents: write # Required to checkout the repository
-  packages: write # Required to publish packages
   issues: write # Required to create issues
+  pull-requests: write # Required to create pull requests
 
 jobs:
   test:
