@@ -24,7 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getPrismaClientSync = exports.getPrismaClient = exports.initializePrismaClient = void 0;
+exports.getPrismaClientSync = exports.getPrismaClient = exports.initializePrismaClientWithNamespace = exports.initializePrismaClient = void 0;
 /**
  * Holds the Prisma namespace that will be used by the extension.
  * Can be initialized with a custom path via initializePrismaClient.
@@ -59,6 +59,18 @@ async function initializePrismaClient(clientPath) {
     }
 }
 exports.initializePrismaClient = initializePrismaClient;
+/**
+ * Initialize with a Prisma namespace directly (synchronous).
+ * Use this when you already have the Prisma namespace loaded in your app.
+ */
+function initializePrismaClientWithNamespace(namespace) {
+    if (!namespace || !namespace.dmmf) {
+        throw new Error('Provided Prisma namespace does not have dmmf property. Please ensure it is a valid Prisma namespace.');
+    }
+    PrismaNamespace = namespace;
+    isInitialized = true;
+}
+exports.initializePrismaClientWithNamespace = initializePrismaClientWithNamespace;
 /**
  * Get the Prisma namespace. If not initialized, will initialize with the default client.
  */

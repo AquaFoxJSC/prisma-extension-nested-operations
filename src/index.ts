@@ -8,4 +8,7 @@ export {
   ExecuteFunction,
 } from "./lib/types";
 
-export { initializePrismaClient } from "./lib/utils/prismaClient";
+export { 
+  initializePrismaClient,
+  initializePrismaClientWithNamespace,
+} from "./lib/utils/prismaClient";

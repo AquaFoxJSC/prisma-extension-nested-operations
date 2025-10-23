@@ -32,6 +32,17 @@ export async function initializePrismaClient(clientPath) {
     }
 }
 /**
+ * Initialize with a Prisma namespace directly (synchronous).
+ * Use this when you already have the Prisma namespace loaded in your app.
+ */
+export function initializePrismaClientWithNamespace(namespace) {
+    if (!namespace || !namespace.dmmf) {
+        throw new Error('Provided Prisma namespace does not have dmmf property. Please ensure it is a valid Prisma namespace.');
+    }
+    PrismaNamespace = namespace;
+    isInitialized = true;
+}
+/**
  * Get the Prisma namespace. If not initialized, will initialize with the default client.
  */
 export async function getPrismaClient() {

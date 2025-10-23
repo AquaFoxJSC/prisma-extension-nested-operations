@@ -5,6 +5,11 @@ import type { Prisma } from "@prisma/client";
  */
 export declare function initializePrismaClient(clientPath?: string): Promise<void>;
 /**
+ * Initialize with a Prisma namespace directly (synchronous).
+ * Use this when you already have the Prisma namespace loaded in your app.
+ */
+export declare function initializePrismaClientWithNamespace(namespace: typeof Prisma): void;
+/**
  * Get the Prisma namespace. If not initialized, will initialize with the default client.
  */
 export declare function getPrismaClient(): Promise<typeof Prisma>;
